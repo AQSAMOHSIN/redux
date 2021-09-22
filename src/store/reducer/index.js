@@ -1,12 +1,8 @@
-import { OBJ_IDS } from "../actions/index";
+import entityReducer from "./entityReducer";
+import objReducer from "./objReducer";
+import { combineReducers } from "redux";
 
-const reducer = (state = {}, action) => {
-  switch (action.type) {
-    case OBJ_IDS:
-      return { ...state, data: action.payload };
-    default:
-      return state;
-  }
-};
-
-export default reducer;
+export default combineReducers({
+  entity: entityReducer,
+  obj: objReducer,
+});
